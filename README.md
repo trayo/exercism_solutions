@@ -10,7 +10,7 @@ as you have verified your github account.
 
 #### Viewing my solutions
 
-Any file uploaded that *doesn't end* in **test** or **spec** is going
+Any file uploaded that **doesn't end** in *test* or *spec* is going
 to be the solution that I worked on and eventually uploaded to
-exercism.io. The **test** and **spec** files are written by the
+exercism.io. The *test* and *spec* files are written by the
 exercism.io team.
