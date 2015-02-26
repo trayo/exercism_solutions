@@ -6,21 +6,21 @@ class Squares
     @sums, @squares = 0, 0
   end
 
-  def square_of_sums(num = sums)
-    if num > users_number
+  def square_of_sums(num = users_number)
+    if num < 1
       sums ** 2
     else
       @sums += num
-      square_of_sums(num + 1)
+      square_of_sums(num - 1)
     end
   end
 
-  def sum_of_squares(num = squares)
-    if num > users_number
+  def sum_of_squares(num = users_number)
+    if num < 1
       squares
     else
       @squares += num ** 2
-      sum_of_squares(num + 1)
+      sum_of_squares(num - 1)
     end
   end
 
