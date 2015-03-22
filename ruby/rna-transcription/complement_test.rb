@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative 'complement'
 
-class ComplementTest < MiniTest::Unit::TestCase
+class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     assert_equal 'G', Complement.of_dna('C')
   end
@@ -41,5 +41,13 @@ class ComplementTest < MiniTest::Unit::TestCase
 
   def test_dna_complement
     assert_equal 'ACTTGGGCTGTAC', Complement.of_rna('UGAACCCGACAUG')
+  end
+
+  def test_dna_raises_argument_error
+    assert_raises(ArgumentError){ Complement.of_dna('U') }
+  end
+
+  def test_rna_raises_argument_error
+    assert_raises(ArgumentError){ Complement.of_rna('T') }
   end
 end
