@@ -1,7 +1,7 @@
 module Complement
 
   def self.of_dna(dna_string)
-    if dna_string.include? "U"
+    if /[^GCTA]/ =~ dna_string
       raise ArgumentError
     end
 
@@ -9,7 +9,7 @@ module Complement
   end
 
   def self.of_rna(rna_string)
-    if rna_string.include? "T"
+    if /[^CGAU]/ =~ rna_string
       raise ArgumentError
     end
 
