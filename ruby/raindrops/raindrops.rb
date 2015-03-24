@@ -11,7 +11,7 @@ module Raindrops
 
   def self.result(number)
     POSSIBLE.inject("") do |result, (sound, value)|
-      sound if number % value == 0
+      number % value == 0 ? result + sound : result
     end
   end
 end
