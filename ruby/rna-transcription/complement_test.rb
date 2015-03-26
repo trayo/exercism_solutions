@@ -50,4 +50,8 @@ class ComplementTest < Minitest::Test
   def test_rna_raises_argument_error
     assert_raises(ArgumentError){ Complement.of_rna('T') }
   end
+
+  def test_it_cant_call_valid_strand
+    assert_raises(NoMethodError){ Complement.valid_strand?(/what/, "what") }
+  end
 end
