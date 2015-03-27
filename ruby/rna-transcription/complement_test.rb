@@ -52,6 +52,6 @@ class ComplementTest < Minitest::Test
   end
 
   def test_it_cant_call_valid_strand
-    assert_raises(NoMethodError){ Complement.valid_strand?(/what/, "what") }
+    assert_raises(NoMethodError){ Complement.raise_if_invalid_strand(/what/, "what") }
   end
 end
