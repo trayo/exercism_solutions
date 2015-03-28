@@ -1,23 +1,22 @@
 class Complement
-  VALID_DNA_STRAND = /[^GCTA]/
-  VALID_RNA_STRAND = /[^CGAU]/
+
+  DNA_STRAND_LETTERS = "GCTA"
+  RNA_STRAND_LETTERS = "CGAU"
 
   def self.of_dna(dna_strand)
-    raise_if_invalid_strand VALID_DNA_STRAND, dna_strand
+    raise_if_invalid_strand DNA_STRAND_LETTERS, dna_strand
 
-    dna_strand.tr "GCTA", "CGAU"
+    dna_strand.tr DNA_STRAND_LETTERS, RNA_STRAND_LETTERS
   end
 
   def self.of_rna(rna_strand)
-    raise_if_invalid_strand VALID_RNA_STRAND, rna_strand
+    raise_if_invalid_strand RNA_STRAND_LETTERS, rna_strand
 
-    rna_strand.tr "CGAU", "GCTA"
+    rna_strand.tr RNA_STRAND_LETTERS, DNA_STRAND_LETTERS
   end
 
-  private
-
-  def self.raise_if_invalid_strand(validator, strand)
-    if validator =~ strand
+  def self.raise_if_invalid_strand(valid_strand, strand)
+    unless /[#{valid_strand}]/ =~ strand
       raise ArgumentError, "Not a valid RNA or DNA strand."
     end
   end
