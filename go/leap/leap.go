@@ -13,25 +13,13 @@ func IsLeapYear(year int) bool {
 }
 
 func divisibleByFour(year int) bool {
-	if year%4 == 0 {
-		return true
-	} else {
-		return false
-	}
+	return year%4 == 0
 }
 
 func notACentury(year int) bool {
-	if year%100 != 0 {
-		return true
-	} else {
-		return false
-	}
+	return year%100 != 0
 }
 
 func aLeapCentury(year int) bool {
-	if year%400 == 0 {
-		return true
-	} else {
-		return false
-	}
+	return year%400 == 0
 }
