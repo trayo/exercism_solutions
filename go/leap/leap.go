@@ -9,7 +9,7 @@ func IsLeapYear(year int) bool {
 		return aLeapCentury(year)
 	}
 
-  return false
+	return false
 }
 
 func divisibleByFour(year int) bool {
