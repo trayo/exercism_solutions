@@ -5,11 +5,11 @@ const TestVersion = 1
 func IsLeapYear(year int) bool {
 	if divisibleByFour(year) && notACentury(year) {
 		return true
-	} else if aLeapCentury(year) {
-		return true
 	} else {
-		return false
+		return aLeapCentury(year)
 	}
+
+  return false
 }
 
 func divisibleByFour(year int) bool {
