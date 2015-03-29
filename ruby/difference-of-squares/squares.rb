@@ -5,20 +5,14 @@ class Squares
   end
 
   def square_of_sums
-    @squares ||= square(@range_of_users_number.reduce(:+))
+    @squares ||= (@range_of_users_number.reduce(:+)) ** 2
   end
 
   def sum_of_squares
-    @sums ||= @range_of_users_number.reduce { |result, num| result += square(num) }
+    @sums ||= @range_of_users_number.reduce { |result, num| result += num ** 2 }
   end
 
   def difference
     square_of_sums - sum_of_squares
-  end
-
-  private
-
-  def square(number)
-    number ** 2
   end
 end
