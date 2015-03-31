@@ -9,7 +9,7 @@ class Squares
   end
 
   def sum_of_squares
-    @sums ||= @numbers.reduce { |result, num| result += num ** 2 }
+    @sums ||= @numbers.reduce { |result, num| result + num ** 2 }
   end
 
   def difference
