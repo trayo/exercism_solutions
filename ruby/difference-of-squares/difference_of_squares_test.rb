@@ -1,8 +1,8 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require "minitest/pride"
 require_relative 'squares'
 
-class SquaresTest < MiniTest::Unit::TestCase
+class SquaresTest < Minitest::Test
   def test_square_of_sums_to_5
     assert_equal 225, Squares.new(5).square_of_sums
   end
@@ -37,5 +37,10 @@ class SquaresTest < MiniTest::Unit::TestCase
 
   def test_difference_of_sums_to_100
     assert_equal 25_164_150, Squares.new(100).difference
+  end
+
+  def test_consistent_difference
+    squares = Squares.new(10)
+    assert_equal squares.difference, squares.difference
   end
 end
