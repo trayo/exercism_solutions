@@ -1,33 +1,38 @@
 class Acronym
-  def self.abbreviate(phrase)
-    phrase.gsub! /[,:-]/, " "
+  attr_reader :phrase
 
-    if recursive_abbreviation? phrase
+  def initialize(phrase)
+    @phrase = phrase
+  end
+
+  def self.abbreviate(phrase)
+    new(phrase).abbreviate
+  end
+
+  def abbreviate
+    require "pry"; binding.pry
+    phrase.gsub!(/[,:-]/, " ")
+
+    if recursive_abbreviation?(phrase)
       phrase.split.first
     else
-      make_abbreviation phrase
+      make_abbreviation(phrase)
     end
   end
 
-  def self.make_abbreviation(phrase)
-    phrase.split.map do |word|
-      word.capitalize! unless upper_case? word.chars.first
 
-      word.chars.select do |char|
-        char if upper_case? char
-      end
+  def make_abbreviation(phrase)
+    phrase.split.map do |word|
+      word.capitalize! unless upper_case?(word.chars.first)
+      word.scan(/[A-Z]/)
     end.join
   end
 
-  def self.upper_case?(character)
+  def upper_case?(character)
     /[[:upper:]]/.match character
   end
 
-  def self.recursive_abbreviation?(word)
+  def recursive_abbreviation?(word)
     upper_case?(word[0]) && upper_case?(word[1])
   end
-
-  private_class_method :upper_case?,
-                       :recursive_abbreviation?,
-                       :make_abbreviation
 end
