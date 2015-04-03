@@ -10,7 +10,6 @@ class Acronym
   end
 
   def abbreviate
-    require "pry"; binding.pry
     phrase.gsub!(/[,:-]/, " ")
 
     if recursive_abbreviation?(phrase)
@@ -29,7 +28,7 @@ class Acronym
   end
 
   def upper_case?(character)
-    /[[:upper:]]/.match character
+    character == character.upcase
   end
 
   def recursive_abbreviation?(word)
