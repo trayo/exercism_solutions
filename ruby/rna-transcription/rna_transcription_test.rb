@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require "minitest/pride"
 require_relative 'complement'
 
 class ComplementTest < Minitest::Test
@@ -51,7 +51,7 @@ class ComplementTest < Minitest::Test
     assert_raises(ArgumentError){ Complement.of_rna('T') }
   end
 
-  def test_it_cant_call_valid_strand
+  def test_it_cant_call_valid_string
     assert_raises(NoMethodError){ Complement.raise_if_invalid_strand(/what/, "what") }
   end
 end
