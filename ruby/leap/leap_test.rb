@@ -1,5 +1,6 @@
 require 'date'
 require 'minitest/autorun'
+require "minitest/pride"
 require_relative 'year'
 
 class Date
