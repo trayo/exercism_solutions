@@ -1,11 +1,11 @@
 class Squares
 
   def initialize(users_number)
-    @numbers = (1..users_number)
+    @numbers = 1..users_number
   end
 
   def square_of_sums
-    @squares ||= (@numbers.reduce(:+)) ** 2
+    @squares ||= @numbers.reduce(:+) ** 2
   end
 
   def sum_of_squares
