@@ -19,7 +19,6 @@ class Acronym
     end
   end
 
-
   def make_abbreviation(phrase)
     phrase.split.map do |word|
       word.capitalize! unless upper_case?(word.chars.first)
