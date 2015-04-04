@@ -51,6 +51,10 @@ class ComplementTest < Minitest::Test
     assert_raises(ArgumentError){ Complement.of_rna('T') }
   end
 
+  def test_rna_raises_argument_error
+    assert_raises(ArgumentError){ Complement.of_rna('GCATFOOBAR') }
+  end
+
   def test_it_cant_call_valid_string
     assert_raises(NoMethodError){ Complement.raise_if_invalid_strand(/what/, "what") }
   end
