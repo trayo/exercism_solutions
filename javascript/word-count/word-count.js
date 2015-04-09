@@ -3,7 +3,7 @@
 var words = function(words) {
   var results = {};
 
-  words.split(/\s/).forEach(function(word) {
+  words.split(/\s+/).forEach(function(word) {
     if (word in results && isNotFunction(results[word])) {
       ++results[word];
     } else {
