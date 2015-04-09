@@ -2,7 +2,9 @@ require 'minitest/autorun'
 require_relative 'roman'
 
 class RomanTest < Minitest::Test
+
   def test_1
+    skip
     assert_equal 'I', 1.to_roman
   end
 
@@ -31,9 +33,44 @@ class RomanTest < Minitest::Test
     assert_equal 'VI', 6.to_roman
   end
 
+  def test_8
+    skip
+    assert_equal 'VIII', 8.to_roman
+  end
+
   def test_9
     skip
     assert_equal 'IX', 9.to_roman
+  end
+
+  def test_10
+    skip
+    assert_equal 'X', 10.to_roman
+  end
+
+  def test_11
+    skip
+    assert_equal 'XI', 11.to_roman
+  end
+
+  def test_15
+    skip
+    assert_equal 'XV', 15.to_roman
+  end
+
+  def test_16
+    skip
+    assert_equal 'XVI', 16.to_roman
+  end
+
+  def test_19
+    skip
+    assert_equal 'XIX', 19.to_roman
+  end
+
+  def test_20
+    skip
+    assert_equal 'XX', 20.to_roman
   end
 
   def test_27
@@ -42,7 +79,6 @@ class RomanTest < Minitest::Test
   end
 
   def test_48
-    skip
     assert_equal 'XLVIII', 48.to_roman
   end
 
