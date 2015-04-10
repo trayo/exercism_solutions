@@ -4,78 +4,67 @@ require_relative 'roman'
 class RomanTest < Minitest::Test
 
   def test_1
-    skip
     assert_equal 'I', 1.to_roman
   end
 
   def test_2
-    skip
     assert_equal 'II', 2.to_roman
   end
 
   def test_3
-    skip
     assert_equal 'III', 3.to_roman
   end
 
   def test_4
-    skip
     assert_equal 'IV', 4.to_roman
   end
 
   def test_5
-    skip
     assert_equal 'V', 5.to_roman
   end
 
   def test_6
-    skip
     assert_equal 'VI', 6.to_roman
   end
 
   def test_8
-    skip
     assert_equal 'VIII', 8.to_roman
   end
 
   def test_9
-    skip
     assert_equal 'IX', 9.to_roman
   end
 
   def test_10
-    skip
     assert_equal 'X', 10.to_roman
   end
 
   def test_11
-    skip
     assert_equal 'XI', 11.to_roman
   end
 
   def test_15
-    skip
     assert_equal 'XV', 15.to_roman
   end
 
   def test_16
-    skip
     assert_equal 'XVI', 16.to_roman
   end
 
   def test_19
-    skip
     assert_equal 'XIX', 19.to_roman
   end
 
   def test_20
-    skip
     assert_equal 'XX', 20.to_roman
   end
 
   def test_27
-    skip
     assert_equal 'XXVII', 27.to_roman
+  end
+
+  def test_36
+    assert_equal 'XXXVI', 36.to_roman
   end
 
   def test_48
