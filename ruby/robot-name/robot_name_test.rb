@@ -21,6 +21,11 @@ class RobotTest < Minitest::Test
     # rubocop:enable Lint/UselessComparison
   end
 
+  def test_a_robot_name_can_have_duplicate_letters
+    srand 30
+    assert_equal "FF472", Robot.new.name
+  end
+
   def test_reset_name
     robot = Robot.new
     name = robot.name
