@@ -5,7 +5,7 @@ class Robot
   attr_reader :name
 
   def initialize
-    @name = generate_name
+    reset
   end
 
   def reset
@@ -15,6 +15,7 @@ class Robot
   private
 
   def generate_name
-    "#{ALPHABET.sample(2).join}#{NUMBERS.sample(3).join}"
+    "#{ALPHABET.sample}#{ALPHABET.sample}" +
+    "#{NUMBERS.sample}#{NUMBERS.sample}#{NUMBERS.sample}"
   end
 end
