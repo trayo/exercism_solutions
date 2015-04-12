@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require "minitest/pride"
 
 require 'prime'
 Error_message = "Using Ruby's Prime class is probably the best way to do this in a 'real'\n" +
@@ -39,7 +40,6 @@ class TestPrimes < Minitest::Test
   end
 
   def test_weird_case
-    skip
     assert_raises ArgumentError do
       Prime.nth(0)
     end
