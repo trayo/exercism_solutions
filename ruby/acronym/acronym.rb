@@ -1,12 +1,12 @@
 class Acronym
   attr_reader :phrase
 
-  def initialize(phrase)
-    @phrase = phrase
-  end
-
   def self.abbreviate(phrase)
     new(phrase).abbreviate
+  end
+
+  def initialize(phrase)
+    @phrase = phrase
   end
 
   def abbreviate
@@ -18,6 +18,8 @@ class Acronym
       make_abbreviation(phrase)
     end
   end
+
+  private
 
   def make_abbreviation(phrase)
     phrase.split.map do |word|
