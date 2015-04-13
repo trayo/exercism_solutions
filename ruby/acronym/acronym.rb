@@ -10,7 +10,7 @@ class Acronym
   end
 
   def abbreviate
-    phrase.gsub!(/[,:-]/, " ")
+    phrase.gsub!(/[^\w]/, " ")
 
     if recursive_acronym?
       phrase.split.first
