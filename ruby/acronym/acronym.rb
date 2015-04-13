@@ -12,16 +12,16 @@ class Acronym
   def abbreviate
     phrase.gsub!(/[,:-]/, " ")
 
-    if recursive_abbreviation?(phrase)
+    if recursive_acronym?
       phrase.split.first
     else
-      make_abbreviation(phrase)
+      make_abbreviation
     end
   end
 
   private
 
-  def make_abbreviation(phrase)
+  def make_abbreviation
     phrase.split.map do |word|
       word.capitalize! unless upper_case?(word.chars.first)
       word.scan(/[A-Z]/)
@@ -32,7 +32,7 @@ class Acronym
     character == character.upcase
   end
 
-  def recursive_abbreviation?(word)
-    upper_case?(word[0]) && upper_case?(word[1])
+  def recursive_acronym?
+    upper_case?(phrase[0]) && upper_case?(phrase[1])
   end
 end
