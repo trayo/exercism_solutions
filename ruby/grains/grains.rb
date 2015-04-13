@@ -2,7 +2,7 @@ class Grains
   TOTAL_SQUARES = 64
 
   def square(number)
-    (1...number).reduce(1) { |sum| sum + sum }
+    2 ** (number - 1)
   end
 
   def total
