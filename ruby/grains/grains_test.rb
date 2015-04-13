@@ -19,6 +19,10 @@ class GrainsTest < Minitest::Test
     assert_equal 8, Grains.new.square(4)
   end
 
+  def test_square_5
+    assert_equal 16, Grains.new.square(5)
+  end
+
   def test_square_16
     assert_equal 32_768, Grains.new.square(16)
   end
