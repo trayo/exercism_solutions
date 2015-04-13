@@ -6,8 +6,6 @@ class Grains
   end
 
   def total
-    (1..TOTAL_SQUARES).reduce(0) do |sum, number|
-      sum + square(number)
-    end
+    square(TOTAL_SQUARES + 1) - 1
   end
 end
