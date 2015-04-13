@@ -6,7 +6,7 @@ class Acronym
   end
 
   def initialize(phrase)
-    @phrase = phrase.gsub!(/[^\w]/, " ")
+    @phrase = phrase.gsub(/[^\w]/, " ")
   end
 
   def abbreviate
