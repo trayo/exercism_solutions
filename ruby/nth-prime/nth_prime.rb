@@ -9,20 +9,6 @@ class Prime
 
     primes = []
 
-    i = 1
-    while primes.length <= goal do
-      if is_prime?(i)
-        primes << i
-      end
-      i += 1
-    end
-
-    primes.last
   end
 
-  private
-
-  def is_prime?(number)
-
-  end
 end
