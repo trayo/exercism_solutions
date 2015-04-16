@@ -1,5 +1,3 @@
-import com.google.common.collect.ImmutableMap;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -18,8 +16,6 @@ public class Etl {
 				sorted.put(entry.getValue().get(i).toLowerCase(), entry.getKey());
 			}
 		}
-		
-		sorted = new ImmutableMap.Builder<String, Integer>().putAll(sorted).build();
 		
 		return sorted;
 	}
