@@ -3,9 +3,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-
-
-
 public class Etl {
 	public Map<String, Integer> transform(Map<Integer, List<String>> old){
 
