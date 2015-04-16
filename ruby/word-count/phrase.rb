@@ -5,7 +5,7 @@ class Phrase
 
   def word_count
     @phrase.each_with_object({}) do |word, result|
-      result[word] = 0 unless result[word]
+      result[word] ||= 0
       result[word] += 1
     end
   end
