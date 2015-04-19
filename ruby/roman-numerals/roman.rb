@@ -9,9 +9,8 @@ class Fixnum
   def to_roman
     number = self
     ROMAN_NUMERALS.map do |numeral, divisor|
-      division, remainder = number.divmod(divisor)
-      number = remainder
-      numeral * division if division >= 1
+      division, number = number.divmod(divisor)
+      numeral * division
     end.join
   end
 end
