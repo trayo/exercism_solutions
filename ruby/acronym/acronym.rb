@@ -20,10 +20,10 @@ class Acronym
   private
 
   def make_abbreviation
-    phrase.split.map do |word|
+    phrase.split.reduce("") do |result, word|
       word.capitalize! unless upper_case?(word.chars.first)
-      word.scan(/[A-Z]/)
-    end.join
+      result << word.scan(/[A-Z]/).join
+    end
   end
 
   def upper_case?(character)
