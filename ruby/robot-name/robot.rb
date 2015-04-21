@@ -15,7 +15,14 @@ class Robot
   private
 
   def generate_name
-    "#{ALPHABET.sample}#{ALPHABET.sample}" +
-    "#{NUMBERS.sample}#{NUMBERS.sample}#{NUMBERS.sample}"
+    "#{letter}#{letter}#{number}#{number}#{number}"
+  end
+
+  def letter
+    ALPHABET.sample
+  end
+
+  def number
+    NUMBERS.sample
   end
 end
