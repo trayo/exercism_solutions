@@ -11,21 +11,15 @@ class FoodChainSong
   ]
 
   def verse(number)
-    song = ""
-    song << "I know an old lady who swallowed a #{VERSES[number-1].first}.\n#{VERSES[number-1].last}\n"
+    @song = ""
 
-    return song if number >= VERSES.length || number == 1
+    @song << "I know an old lady who swallowed a #{VERSES[number-1].first}.\n#{VERSES[number-1].last}\n"
+    return @song if number >= VERSES.length || number == 1
 
-    (number-1).step(1, -1) do |i|
-      if i == 2
-        song << "She swallowed the #{VERSES[i].first} to catch the #{spider}.\n"
-      else
-        song << "She swallowed the #{VERSES[i].first} to catch the #{VERSES[i-1].first}.\n"
-      end
-    end
+    add_animals_swallowed(number)
 
-    song << "#{VERSES[0].last}\n"
-    song
+    @song << "#{VERSES[0].last}\n"
+    @song
   end
 
   def verses(lower, upper)
@@ -40,7 +34,17 @@ class FoodChainSong
 
   private
 
+  def add_animals_swallowed(number)
+    (number-1).step(1, -1) do |i|
+      if i == 2
+        @song << "She swallowed the #{VERSES[i].first} to catch the #{spider}\n"
+      else
+        @song << "She swallowed the #{VERSES[i].first} to catch the #{VERSES[i-1].first}.\n"
+      end
+    end
+  end
+
   def spider
-    "spider that wriggled and jiggled and tickled inside her"
+    VERSES[1].last.gsub("It", "spider that")
   end
 end
