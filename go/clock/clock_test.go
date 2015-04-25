@@ -1,7 +1,7 @@
 package clock
 
 import (
-	"reflect"
+	// "reflect"
 	"testing"
 )
 
