@@ -14,9 +14,11 @@ func Time(hours, minutes int) Clock {
   return Clock{hours, minutes}
 }
 
-// func (clock Clock) Add(minutes int) Clock {
-//   return Time(minutes)
-// }
+func (c Clock) Add(m int) Clock {
+  c.minutes += m
+  c.hours, c.minutes = adjustMinutesAndHours(c.hours, c.minutes)
+  return c
+}
 
 func (c Clock) String() string {
   return fmt.Sprintf("%0.2d:%0.2d", c.hours, c.minutes)
