@@ -40,7 +40,7 @@ want %s`, in, got, want)
 }
 
 func TestYourAnniversary(t *testing.T) {
-  Birthday := parse("1989-07-23", t)
+	Birthday := parse("1989-07-23", t)
 	t.Logf(`
 Your birthday:               %s
 Your gigasecond anniversary: %s`, Birthday, AddGigasecond(Birthday))
