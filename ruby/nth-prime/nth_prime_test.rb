@@ -36,18 +36,16 @@ class TestPrimes < Minitest::Test
     assert_equal 7, Prime.nth(4)
   end
 
-  def test_fourth
+  def test_fifth
     assert_equal 11, Prime.nth(5)
   end
 
   def test_sixth
-    skip
     assert_equal 13, Prime.nth(6)
   end
 
   def test_fifty
-    skip
-    assert_equal 13, Prime.nth(50)
+    assert_equal 229, Prime.nth(50)
   end
 
   def test_big_prime
