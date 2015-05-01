@@ -21,7 +21,7 @@ class Bob
   end
 
   def not_only_numbers?
-    !@phrase.gsub(/\W/, "").match(/^(\d+)$/)
+    @phrase.gsub(/\W/, "").match(/\D/)
   end
 
   def asking_a_question?
