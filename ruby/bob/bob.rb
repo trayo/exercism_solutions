@@ -3,7 +3,7 @@ class Bob
   def hey(phrase)
     @phrase = phrase
 
-    if phrase.strip.empty?
+    if saying_nothing?
       "Fine. Be that way!"
     elsif shouting? && not_only_numbers?
       "Whoa, chill out!"
@@ -15,6 +15,10 @@ class Bob
   end
 
   private
+
+  def saying_nothing?
+    @phrase.strip.empty?
+  end
 
   def shouting?
     @phrase.upcase == @phrase
