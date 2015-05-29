@@ -5,18 +5,14 @@ class Anagram
   end
 
   def match(anagrams)
-    anagrams.select! do |a|
-      a.length == @word.length && a.downcase != @word
-    end
-
-    anagrams.map do |anagram|
-      anagram if matches_word?(anagram)
-    end.compact
+    anagrams.map { |anagram| anagram if matches_word?(anagram) }.compact
   end
 
   private
 
   def matches_word?(anagram)
-    @word.chars.sort == anagram.downcase.chars.sort
+    anagram.downcase.chars.sort == @word.chars.sort &&
+      anagram.length == @word.length                &&
+      anagram.downcase != @word
   end
 end
