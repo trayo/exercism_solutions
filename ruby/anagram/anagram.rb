@@ -5,13 +5,12 @@ class Anagram
   end
 
   def match(anagrams)
-    anagrams.select { |anagram| matches_word?(anagram) }
+    anagrams.select { |anagram| matches_word?(anagram.downcase) }
   end
 
   private
 
   def matches_word?(anagram)
-    anagram.downcase != @word &&
-      anagram.downcase.chars.sort == @word.chars.sort
+    anagram != @word && anagram.chars.sort == @word.chars.sort
   end
 end
