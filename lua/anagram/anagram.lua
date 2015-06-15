@@ -3,7 +3,7 @@ local Anagram = {}
 function Anagram:new(word)
   self.word = word:lower()
   self.wordChars = getChars(self.word)
-  return Anagram
+  return self
 end
 
 function Anagram:match(words)
