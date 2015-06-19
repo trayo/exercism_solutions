@@ -2,7 +2,10 @@ local Anagram = {}
 
 function Anagram:new(word)
   self.word = word:lower()
-  self.wordChars = getChars(self.word)
+
+  local chars = getChars(self.word)
+  table.sort(chars)
+  self.wordChars = chars
   return self
 end
 
@@ -19,7 +22,6 @@ function Anagram:match(words)
 end
 
 function sameCharacters(anagramChars, wordChars)
-  table.sort(wordChars)
   table.sort(anagramChars)
 
   for i=1, math.max(#anagramChars, #wordChars) do
