@@ -3,9 +3,8 @@ local Anagram = {}
 function Anagram:new(word)
   self.word = word:lower()
 
-  local chars = getChars(self.word)
-  table.sort(chars)
-  self.wordChars = chars
+  self.wordChars = getChars(self.word)
+  table.sort(self.wordChars)
   return self
 end
 
