@@ -1,4 +1,4 @@
-local Words = require('words')
+local Words = require('word-count')
 
 describe('Words', function()
 
