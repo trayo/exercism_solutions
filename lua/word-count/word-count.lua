@@ -15,8 +15,6 @@ function Words:count()
     self.words[word] = self.words[word] + 1
   end
 
-  for k,v in pairs(self.words) do self.words[k] = tostring(v) end
-
   return self.words
 end
 
