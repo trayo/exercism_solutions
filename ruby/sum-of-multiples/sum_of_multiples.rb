@@ -1,8 +1,8 @@
 class SumOfMultiples
-  DEFAULTS = [3, 5]
+  DEFAULT = [3, 5]
 
   def self.to(num)
-    new(DEFAULTS).to(num)
+    new(DEFAULT).to(num)
   end
 
   def initialize(*nums)
@@ -21,11 +21,7 @@ class SumOfMultiples
   private
 
   def find_multiples(num)
-    @nums.flat_map do |n|
-      (0...num).step(n).map do |i|
-        i if i % n == 0
-      end
-    end.uniq
+    @nums.flat_map { |n| (0...num).step(n).to_a }
   end
 end
 
