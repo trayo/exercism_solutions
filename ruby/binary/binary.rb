@@ -7,10 +7,8 @@ class Binary
   end
 
   def to_decimal
-    index = @binary_string.length
-    @binary_string.reduce(0) do |res, n|
-      index -= 1
-      res + n.to_i * 2 ** index
+    @binary_string.each_with_index.reduce(0) do |result, (element, index)|
+      result + element.to_i * 2 ** (@binary_string.length.pred - index)
     end
   end
 end
