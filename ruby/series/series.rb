@@ -13,9 +13,9 @@ class Series
   private
 
   def make_slices(string, length)
-    string.length.times.map do |index|
-      string.slice(index, length).chars.map(&:to_i)
-    end.delete_if { |e| e.length != length }
+    string.chars.each_cons(length).map do |slice|
+      slice.map(&:to_i)
+    end
   end
 end
 
