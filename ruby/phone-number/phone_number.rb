@@ -1,10 +1,11 @@
 class PhoneNumber
   DEFAULT = "0000000000"
+  VALIDATOR = /^\d{10}$/
 
   attr_reader :number
 
   def initialize(phone_number)
-    @number = valid_parsed_number?(phone_number) ? parse(phone_number) : DEFAULT
+    @number = parse(phone_number)
   end
 
   def area_code
@@ -17,12 +18,14 @@ class PhoneNumber
 
   private
 
-  def valid_parsed_number?(number)
-    parse(number).match(/^\d{10}$/)
+  def parse(number)
+    number.delete!("() -.")
+    number.slice!(0) if number.length != 10 && number.start_with?("1")
+    valid?(number) ? number : DEFAULT
   end
 
-  def parse(number)
-    number.slice!(0) if number.length != 10 && number.start_with?("1")
-    number.delete("() -.")
+  def valid?(number)
+    number.match(VALIDATOR)
   end
 end
+
