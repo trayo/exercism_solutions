@@ -3,19 +3,19 @@ require 'prime'
 class PrimeFactors
   def self.for(num)
     return [] if num == 1
-    return [num] if num > 1 && num < 4
+    return [num] if (2..3).include? num
 
-    result = []
+    factors = []
 
-    i = 2
-    while num >= i
-      while num % i == 0
-        result << i if num % i == 0
-        num /= i
+    possible_factor = 2
+    while num >= possible_factor
+      while num % possible_factor == 0
+        factors << possible_factor
+        num /= possible_factor
       end
-      i += 1
+      possible_factor += 1
     end
 
-    result
+    factors
   end
 end
