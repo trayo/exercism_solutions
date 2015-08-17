@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
+<<<<<<< HEAD
 require "minitest/pride"
+=======
+>>>>>>> 51ab776... initial upload from work
 require_relative 'binary'
 
 class BinaryTest < Minitest::Test
@@ -14,34 +17,66 @@ class BinaryTest < Minitest::Test
   end
 
   def test_binary_10_is_decimal_2
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 2, Binary.new('10').to_decimal
   end
 
   def test_binary_11_is_decimal_3
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 3, Binary.new('11').to_decimal
   end
 
   def test_binary_100_is_decimal_4
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 4, Binary.new('100').to_decimal
   end
 
   def test_binary_1001_is_decimal_9
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 9, Binary.new('1001').to_decimal
   end
 
   def test_binary_11010_is_decimal_26
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 26, Binary.new('11010').to_decimal
   end
 
   def test_binary_10001101000_is_decimal_1128
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 1128, Binary.new('10001101000').to_decimal
   end
 
   def test_binary_ignores_leading_zeros
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 31, Binary.new('000011111').to_decimal
   end
 
   def test_invalid_binary_numbers_raise_an_error
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     %w(012 10nope nope10).each do |input|
       assert_raises ArgumentError do
         Binary.new(input)
@@ -52,6 +87,10 @@ class BinaryTest < Minitest::Test
   # This test is for the sake of people providing feedback, so they
   # know which version of the exercise you are solving.
   def test_bookkeeping
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     assert_equal 1, Binary::VERSION
   end
 end

@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
+<<<<<<< HEAD
 require "minitest/pride"
+=======
+>>>>>>> 51ab776... initial upload from work
 require_relative 'accumulate'
 
 class ArrayTest < Minitest::Test
@@ -10,6 +13,10 @@ class ArrayTest < Minitest::Test
   end
 
   def test_accumulate_squares
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     result = [1, 2, 3].accumulate do |number|
       number * number
     end
@@ -17,16 +24,28 @@ class ArrayTest < Minitest::Test
   end
 
   def test_accumulate_upcases
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     result = %w(hello world).accumulate(&:upcase)
     assert_equal %w(HELLO WORLD), result
   end
 
   def test_accumulate_reversed_strings
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     result = %w(the quick brown fox etc).accumulate(&:reverse)
     assert_equal %w(eht kciuq nworb xof cte), result
   end
 
   def test_accumulate_recursively
+<<<<<<< HEAD
+=======
+    skip
+>>>>>>> 51ab776... initial upload from work
     result = %w(a b c).accumulate do |char|
       %w(1 2 3).accumulate do |digit|
         "#{char}#{digit}"
