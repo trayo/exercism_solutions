@@ -1,3 +1,8 @@
+<<<<<<< e5aca9db246ccfd8be4301008076a94072864608
+=======
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+>>>>>>> initial upload from work
 require 'minitest/autorun'
 require_relative 'sieve'
 

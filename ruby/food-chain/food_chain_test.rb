@@ -1,10 +1,19 @@
+<<<<<<< e5aca9db246ccfd8be4301008076a94072864608
 require 'minitest/autorun'
 require 'minitest/pride'
+=======
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+>>>>>>> initial upload from work
 
 require_relative 'food_chain'
 
 class FoodChainTest < Minitest::Test
+<<<<<<< e5aca9db246ccfd8be4301008076a94072864608
 
+=======
+>>>>>>> initial upload from work
   # This test is an acceptance test.
   #
   # If you find it difficult to work the problem with so much
@@ -22,6 +31,10 @@ class FoodChainTest < Minitest::Test
   # This is some simple book-keeping to let people who are
   # giving feedback know which version of the exercise you solved.
   def test_version
+<<<<<<< e5aca9db246ccfd8be4301008076a94072864608
+=======
+    skip
+>>>>>>> initial upload from work
     assert_equal 1, FoodChain::VERSION
   end
 end
