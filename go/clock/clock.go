@@ -31,8 +31,8 @@ func (c Clock) adjustMinutesAndHours() Clock {
       c.minutes -= 60
     }
   }
-  c = c.adjustHours()
-  return c
+
+  return c.adjustHours()
 }
 
 func (c Clock) adjustHours() Clock {
