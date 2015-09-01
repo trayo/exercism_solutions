@@ -1,19 +1,19 @@
 package diffsquares
 
-import "math"
+// import "math"
 
 func SquareOfSums(i int) int {
 	result := i
 	for j := 1; j < i; j++ {
 		result += j
 	}
-	return int(math.Pow(float64(result), 2))
+	return result * result
 }
 
 func SumOfSquares(i int) int {
-	result := math.Pow(float64(i), 2)
+	result := i * i
 	for j := 1; j < i; j++ {
-		result += math.Pow(float64(j), 2)
+		result += j * j
 	}
 	return int(result)
 }
