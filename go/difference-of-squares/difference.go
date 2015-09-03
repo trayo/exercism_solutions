@@ -1,7 +1,5 @@
 package diffsquares
 
-// import "math"
-
 func SquareOfSums(i int) int {
 	result := i
 	for j := 1; j < i; j++ {
