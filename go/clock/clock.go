@@ -2,26 +2,26 @@ package clock
 
 import "fmt"
 
+const TestVersion = 2
+
 type Clock struct {
   hours, minutes int
 }
 
-const TestVersion = 2
-
 func Time(hours, minutes int) Clock {
-  return Clock{hours, minutes}.adjustMinutesAndHours()
+  return adjustMinutesAndHours(Clock{hours, minutes})
 }
 
 func (c Clock) Add(minutes int) Clock {
   c.minutes += minutes
-  return c.adjustMinutesAndHours()
+  return adjustMinutesAndHours(c)
 }
 
 func (c Clock) String() string {
   return fmt.Sprintf("%0.2d:%0.2d", c.hours, c.minutes)
 }
 
-func (c Clock) adjustMinutesAndHours() Clock {
+func adjustMinutesAndHours(c Clock) Clock {
   for c.minutes > 59 || c.minutes < 0 {
     if c.minutes < 0 {
       c.hours -= 1
@@ -32,10 +32,10 @@ func (c Clock) adjustMinutesAndHours() Clock {
     }
   }
 
-  return c.adjustHours()
+  return adjustHours(c)
 }
 
-func (c Clock) adjustHours() Clock {
+func adjustHours(c Clock) Clock {
   for c.hours > 23 || c.hours < 0 {
     if c.hours < 0 {
       c.hours += 24
