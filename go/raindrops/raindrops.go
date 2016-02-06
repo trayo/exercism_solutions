@@ -2,6 +2,8 @@ package raindrops
 
 import "fmt"
 
+const TestVersion = 1
+
 var drops = []struct {
 	number int
 	sound  string
