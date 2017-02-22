@@ -1,17 +1,18 @@
-module Raindrops
-  POSSIBLE = {
-    "Pling" => 3,
-    "Plang" => 5,
-    "Plong" => 7
-  }
+class Raindrops
 
   def self.convert(number)
-    result(number).empty? ? number.to_s : result(number)
-  end
-
-  def self.result(number)
-    POSSIBLE.inject("") do |result, (sound, value)|
-      number % value == 0 ? result + sound : result
+    if number % 3 == 0
+      return "Pling"
     end
+
+    if number % 5 == 0
+      return "Plang"
+    end
+
+    if number % 7 == 0
+      return "Plong"
+    end
+
+    return number.to_s
   end
 end
